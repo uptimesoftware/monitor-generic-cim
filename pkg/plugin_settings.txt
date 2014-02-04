@@ -1,0 +1,6 @@
+name=Generic CIM Monitor
+version=1.0
+platforms=linux
+description=This monitors uses wbemcli to get metrics/status through CIM.
+requiresAgentScript=false
+restartCore=false

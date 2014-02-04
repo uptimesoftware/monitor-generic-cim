@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.uptimesoftware.com/erdc/erdc erdc"
+	xmlns="http://www.uptimesoftware.com/erdc/erdc"
+	xmlns:upt="http://www.uptimesoftware.com/erdc/erdc" version="4.0" target_grouping="other">
+    <class>Generic CIM</class>
+	<exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+    <elements>
+		<element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+			<control_options> size:40 </control_options>
+			<default_value>scripts/Monitor_Generic_CIM/CIM_monitor.sh</default_value>
+			<short_description>Script Name</short_description>
+			<long_description>Name of the script/binary/process to be executed by up.time </long_description>
+			<validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+			<gui_type><string/></gui_type>
+		</element>
+		
+		<element name="cim-username" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Username</short_description>
+            <long_description>CIM Username</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="cim-password" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Password</short_description>
+            <long_description>CIM Password</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <password/>
+            </gui_type>
+        </element>
+		<element name="cim-port" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value>5989</default_value>
+            <short_description>CIM Port</short_description>
+            <long_description>CIM Port</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="cim-root" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Root</short_description>
+            <long_description>CIM Root</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="cim-class" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Class</short_description>
+            <long_description>CIM Class</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="cim-property" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Property</short_description>
+            <long_description>CIM Property</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		<element name="cim-action" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>CIM Action</short_description>
+            <long_description>CIM Action</long_description>
+            <validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+            <gui_type>
+                <single_select type="dropdown">
+                    <value>Single</value>
+                    <value>Multi</value>
+                </single_select>
+            </gui_type>
+        </element>
+		<element name="cim-single-type" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>CIM Data Type (Only for Single)</short_description>
+            <long_description>CIM Data Type</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <single_select type="dropdown">
+                    <value>String</value>
+                    <value>Numeric</value>
+                </single_select>
+            </gui_type>
+        </element>
+		<element name="cim-index-property" parameter_type="input" data_type="string" gui_basic="1"
+				range_type="0" units="">
+            <control_options>size:40</control_options>
+            <default_value/>
+            <short_description>CIM Index Property (Only for Multi)</short_description>
+            <long_description>CIM Index Property</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>
+		
+		<element name="propertyString" parameter_type="output" data_type="string" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Property Data (String)</short_description>
+            <long_description>Property Data (String)</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>		
+		<element name="propertyNumeric" parameter_type="output" data_type="decimal" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Property Data (Numeric)</short_description>
+            <long_description>Property Data (Numeric)</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <decimal/>
+            </gui_type>
+        </element>
+		<element name="multiProperty" parameter_type="output" data_type="ranged" gui_basic="1" range_type="0" units="">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Multi-instance Property</short_description>
+            <long_description>Multi-instance Property</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <decimal/>
+            </gui_type>
+        </element>
+		
+		
+        <element name="timer" parameter_type="output" data_type="integer" gui_basic="0"
+				range_type="0" units="ms">
+            <control_options>size:8</control_options>
+            <default_value/>
+            <short_description>Response time</short_description>
+            <long_description>Response time in ms</long_description>
+            <validation_rule/>
+            <error_message/>
+            <gui_type>
+                <integer/>
+            </gui_type>
+        </element>
+    </elements>
+    <help>When running a custom script check, note that the second parameter is always the name of the assigned host.
+	The script that's executed should output each variable on it's own line, otherwise up.time won't be able to capture the appropriate information.
+    </help>
+</uptime>
